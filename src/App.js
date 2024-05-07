@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import CarouselDefault from './components/CarouselDefault';
 
 function App({ moduleData }) {
   // eslint-disable-next-line no-console
@@ -8,7 +9,7 @@ function App({ moduleData }) {
   //   moduleData,
   // );
   return (
-    <></>
+    <CarouselDefault/>
   );
 }
 
