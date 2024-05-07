@@ -53,7 +53,7 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
         portal,
         autoupload,
         src: 'dist',
-        dest: 'cms-react-boilerplate',
+        dest: 'Video Carousel V1',
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css',

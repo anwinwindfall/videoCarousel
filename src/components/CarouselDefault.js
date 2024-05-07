@@ -3,14 +3,17 @@ import leftangle from '../images/leftangle.svg'
 import rightangle from '../images/rightangle.svg'
 import CarouselDefaultPlayer from './CarouselDefaultPlayer'
 import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import 'react-alice-carousel/lib/alice-carousel.scss';
 
 const CarouselDefault = () => {
-  const items=[1,1,1,1,1].map((items)=><CarouselDefaultPlayer/>)
+  const items=[1,1,1,1,1,1].map((items)=><CarouselDefaultPlayer/>)
   const responsive = {
     0: { items: 1 },
-    720: { items: 3 },
-    1024: { items: 5 },
+    420: { items: 1.1 },
+    576: { items: 1.4 },
+    768: { items: 2.1 },
+    925: { items: 3.1 },
+    1528: { items: 4.1 },
 };
   return (
     <div>
