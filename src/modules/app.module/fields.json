@@ -1,13 +1,36 @@
 [
   {
-    "default": 0,
-    "min": 0,
-    "max": 100,
-    "display": "slider",
-    "label": "Starting number of reasons",
-    "locked": false,
-    "name": "initial_count",
-    "required": false,
-    "type": "number"
+   "type": "choice",
+   "id": "ca91c796-ffbb-1ea9-1dcc-99f8c1ed9057",
+   "display": "radio",
+   "choices": [
+    [
+     "default",
+     "Normal"
+    ],
+    [
+     "story",
+     "Story"
+    ]
+   ],
+   "label": "Video Type",
+   "name": "video_type"
+  },
+  {
+   "type": "group",
+   "id": "b0823912-eda7-e4b0-de05-4dfcb2a51910",
+   "label": "Video Settings",
+   "children": [
+    {
+     "type": "text",
+     "id": "afb79c29-4bf2-c8b5-0af0-ffcf445e09bd",
+     "validation_regex": "",
+     "label": "Video URL",
+     "name": "video_url"
+    }
+   ],
+   "name": "video_settings",
+   "default": [],
+   "occurrence": {}
   }
-]
+ ]
