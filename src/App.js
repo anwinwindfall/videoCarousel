@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import CarouselDefault from './components/CarouselDefault';
+import CarouselDefault from './components/CarouselDefault/CarouselDefault';
 
 function App({ moduleData }) {
   // eslint-disable-next-line no-console

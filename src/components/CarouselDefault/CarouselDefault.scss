@@ -1,0 +1,11 @@
+.player.right-content-area-supported>.content-area-sibling-enabled .vp-preview-cover {
+    border-radius: 4px !important;
+    box-shadow: 0px 4px 4px 0px #00000040 !important;
+}
+.Video-player-class{
+
+   &  div#vp-preview{
+        border-radius: 4px !important;
+        box-shadow: 0px 4px 4px 0px #00000040 !important;
+    }
+} 
