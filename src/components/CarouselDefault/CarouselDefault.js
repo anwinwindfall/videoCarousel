@@ -32,6 +32,7 @@ const CarouselDefault = () => {
       <div className='arrow-r'>
         <img src={rightangle} />
       </div>
+      
     </div>
   )
 }
