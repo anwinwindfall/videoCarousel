@@ -12,26 +12,29 @@
     }
     .alice-carousel {
         padding-left: 68px;
+        margin-bottom: 20px;
       
     }
     .arrow-r{
         & img{
             position: absolute;
-            right: 0;
+            right: 1%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            // transform: translateY(-50%);
             background-color: #ffffff;
             border-radius: 50%;
+            z-index: 999;
         }
     }
     .arrow-l{
         & img{
             position: absolute;
-            left: calc(68px + 0%);
+            left: calc(68px + 2%);
             top: 50%;
-            transform: translate(-50%,-50%);
+            // transform: translateY(-50%);
             border-radius: 50%;
-            background-color: #ffffff;
+            background-color: #ffffff !important;
+            z-index: 999;
         }
     }
 }
