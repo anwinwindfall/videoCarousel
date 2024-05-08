@@ -7,6 +7,14 @@ const CarouselDefaultPlayer = () => {
                 height="200px"
                 width="300px"
                 controls={true}
+                config={{
+                  vimeo:{
+                    playerOptions:{
+                      cc:'false',
+                      transcript: 'false'
+                    }
+                  }
+                }}
                 />
   )
 }
