@@ -10,10 +10,12 @@ const CarouselDefault = () => {
   const items = [1, 1, 1, 1, 1, 1].map((items) => <CarouselDefaultPlayer />)
   const responsive = {
     0: { items: 1 },
-    420: { items: 1.1 },
+    420: { items: 1 },
     576: { items: 1.4 },
-    768: { items: 2.1 },
-    925: { items: 3.1 },
+    768: { items: 1.4 },
+    848: { items: 2.1 },  
+    925: { items: 2.1 },
+    1200: { items: 3 },
     1528: { items: 4.1 },
   };
   return (
