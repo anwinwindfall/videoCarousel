@@ -29,7 +29,7 @@
     .arrow-l{
         & img{
             position: absolute;
-            left: calc(68px + 2%);
+            left: 2%;
             top: 50%;
             // transform: translateY(-50%);
             border-radius: 50%;
@@ -43,4 +43,8 @@
         border-radius: 4px !important;
         box-shadow: 0px 4px 4px 0px #00000040 !important;
     }
+}
+.player.right-content-area-supported {
+    overflow: hidden;
+    border-radius: 10px !important;
 }
