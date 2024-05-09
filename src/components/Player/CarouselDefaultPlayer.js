@@ -7,8 +7,8 @@ const CarouselDefaultPlayer = () => {
                 height="204px"
                 width="375px"
                 controls={true}
-                style={{borderRadius:'4px !important'}}
-                className="Video-player-class"
+                // style={{borderRadius:'4px !important'}}
+                // className="Video-player-class"
                 // className="Video-player-class"
                 config={{
                   vimeo: {
