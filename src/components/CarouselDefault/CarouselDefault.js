@@ -54,7 +54,7 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
         
       />
       </div>
-      {currentIndex<videos.length-2&&(<div className='arrow-r' onClick={slideNext}>
+      {currentIndex<videos.length-3&&(<div className='arrow-r' onClick={slideNext}>
         <img src={rightangle}/>
       </div>)}
       {/* {console.log(currentIndex, "currentIndex")} */}
