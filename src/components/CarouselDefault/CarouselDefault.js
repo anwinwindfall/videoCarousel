@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import leftangle from '../../images/leftangle.svg'
 import rightangle from '../../images/rightangle.svg'
 import CarouselDefaultPlayer from '../Player/CarouselDefaultPlayer'
@@ -6,35 +6,58 @@ import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import "./CarouselDefault.scss";
 
-const CarouselDefault = () => {
-  const items = [1, 1, 1, 1, 1, 1].map((items) => <CarouselDefaultPlayer />)
-  const responsive = {
-    0: { items: 1 },
-    420: { items: 1 },
-    576: { items: 1.4 },
-    768: { items: 1.4 },
-    848: { items: 2.1 },  
-    925: { items: 2.1 },
-    1200: { items: 3 },
-    1528: { items: 4.1 },
-  };
+const CarouselDefault = ({videos, type, responsive, heading}) => {
+  const carouselRef= useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const items = videos.map((items) => <CarouselDefaultPlayer url={items.video_url} type={type}/>)
+  // console.log(videos.length, "length");
+  const slidePrev=()=>{
+    if (carouselRef.current) {
+      carouselRef.current.slidePrev();
+    }
+  }
+  const slideNext=()=>{
+    if (carouselRef.current) {
+      carouselRef.current.slideNext();
+    }
+  }
+  function handleSlideChange(index){
+    setCurrentIndex(index.item);
+    // console.log(currentIndex, "current index");
+  }
+  function heightControl() {
+    if (type=="story") {
+      return "510px"
+    }
+    else{
+      return true
+    }
+  }
+
   return (
     <div>
-      <p>true stories - 6 videos</p>
-      <div className='arrow-l'>
+      <p>{heading}</p>
+      {currentIndex>=1&&(<div className='arrow-l' onClick={slidePrev}>
         <img src={leftangle} />
-      </div>
+      </div>)}
+      <div className={`${type=="story"?'carousel-wrapper-story':'carousel-wrapper'}`}>
       <AliceCarousel
         items={items}
         responsive={responsive}
         disableDotsControls={true}
         disableButtonsControls={true}
-        infinite
+        mouseTracking
+        onSlideChanged={handleSlideChange}
+        ref={carouselRef}
+        autoHeight={heightControl()}
+        autoWidth={true}
+        
       />
-      <div className='arrow-r'>
-        <img src={rightangle} />
       </div>
-      
+      {currentIndex<videos.length-2&&(<div className='arrow-r' onClick={slideNext}>
+        <img src={rightangle}/>
+      </div>)}
+      {/* {console.log(currentIndex, "currentIndex")} */}
     </div>
   )
 }
