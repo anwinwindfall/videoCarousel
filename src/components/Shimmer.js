@@ -1,8 +1,10 @@
 import React from 'react'
-
-const Shimmer = () => {
+import './Shimmer.scss'
+const Shimmer = ({type}) => {
   return (
-    <div>Shimmer</div>
+    <div class={`${type=="default"?'card':'card-story'}`}>
+      <div class={`shimmer-animation ${type=="default"?'loader-shimmer-banner':'loader-shimmer-banner-story'}`}></div>
+    </div>
   )
 }
 
