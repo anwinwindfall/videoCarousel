@@ -1,4 +1,4 @@
-.sw-video-carousel {
+.widget-wrap {
     position: relative;
     & p{
         margin-left: 68px;
@@ -35,22 +35,16 @@
         }
     }
 }
-// #player{
-//     .player{
-//         border-radius: 4px !important;
-//         box-shadow: 0px 4px 4px 0px #00000040 !important;
-//     }
-// }
-// .player.right-content-area-supported {
-//     overflow: hidden;
-//     border-radius: 10px !important;
-// }
 .Video-player-class{
-    max-width: 375px;
-    max-height: 205px;
+    max-width: 375px !important;
+    max-height: 205px !important;
 }
 
 .Video-player-class-story{
     max-width: 241px !important;
     height: 410px !important;
+}
+.Video-player-class-wrap{
+    max-width: 375px !important;
+    max-height: 205px !important;
 }
