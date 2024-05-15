@@ -10,6 +10,20 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
   const carouselRef= useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = videos.map((items) => <CarouselDefaultPlayer url={items.video_url} type={type}/>)
+  const screenWidth=window.innerWidth;
+  const numberOfSlidesNormal= Math.ceil(screenWidth/375);
+  const numberOfSlidesStory= Math.floor(screenWidth/241);
+  function hideRightArrow(){
+    if (type=="story"&&currentIndex>videos.length-numberOfSlidesStory) {
+      return false
+    }
+    else if(type=="default"&&currentIndex>videos.length-numberOfSlidesNormal){
+      return false
+    }
+    return true
+  }
+
+  console.log(numberOfSlidesNormal, numberOfSlidesStory);
   // console.log(videos.length, "length");
   const slidePrev=()=>{
     if (carouselRef.current) {
@@ -23,7 +37,6 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
   }
   function handleSlideChange(index){
     setCurrentIndex(index.item);
-    // console.log(currentIndex, "current index");
   }
   function heightControl() {
     if (type=="story") {
@@ -48,13 +61,13 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
         disableButtonsControls={true}
         mouseTracking
         onSlideChanged={handleSlideChange}
+        activeIndex={currentIndex}
         ref={carouselRef}
         autoHeight={heightControl()}
         autoWidth={true}
-        
       />
       </div>
-      {currentIndex<videos.length-3&&(<div className='arrow-r' onClick={slideNext}>
+      {hideRightArrow()&&(<div className='arrow-r' onClick={slideNext}>
         <img src={rightangle}/>
       </div>)}
       {/* {console.log(currentIndex, "currentIndex")} */}
