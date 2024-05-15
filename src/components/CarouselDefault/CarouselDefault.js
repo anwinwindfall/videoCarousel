@@ -1,14 +1,16 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import leftangle from '../../images/leftangle.svg'
 import rightangle from '../../images/rightangle.svg'
 import CarouselDefaultPlayer from '../Player/CarouselDefaultPlayer'
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/scss/alice-carousel.scss";
 import "./CarouselDefault.scss";
+import Shimmer from '../Shimmer';
 
 const CarouselDefault = ({videos, type, responsive, heading}) => {
   const carouselRef= useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0);
+  const videoIdRegex = /\/video\/(\d+)\?/;
   const items = videos.map((items) => <CarouselDefaultPlayer url={items.video_url} type={type}/>)
   const screenWidth=window.innerWidth;
   const numberOfSlidesNormal= Math.ceil(screenWidth/375);
@@ -47,8 +49,9 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
     }
   }
 
+
   return (
-    <div>
+    <div className='widget-wrap'>
       <p>{heading}</p>
       {currentIndex>=1&&(<div className='arrow-l' onClick={slidePrev}>
         <img src={leftangle} />
