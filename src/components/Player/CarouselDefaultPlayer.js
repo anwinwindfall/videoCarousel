@@ -11,7 +11,7 @@ const CarouselDefaultPlayer = ({ type, url}) => {
   }
   return (
     <div className={`${type == "default" ? 'Video-player-class-wrap' : 'Video-player-class-story-wrap'}`}>
-      {!isLoaded&&<Shimmer/>}
+      {!isLoaded&&<Shimmer type={type}/>}
       <ReactPlayer
       url={url}
       controls={true}
