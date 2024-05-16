@@ -9,6 +9,23 @@ const CarouselDefaultPlayer = ({ type, url}) => {
   function handlePlayerReady(){
     setIsLoaded(true)
   }
+  function handleWidth(type){
+    if (type=='default') {
+      return '375px'
+    }
+    else{
+      return '241px'
+    }
+  }
+  function handlHeight(type){
+    if (type=='default') {
+      return '205px'
+    }
+    else{
+      return '410px'
+    }
+  }
+  
   return (
     <div className={`${type == "default" ? 'Video-player-class-wrap' : 'Video-player-class-story-wrap'}`}>
       {!isLoaded&&<Shimmer type={type}/>}
@@ -17,7 +34,8 @@ const CarouselDefaultPlayer = ({ type, url}) => {
       controls={true}
       className={`${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}
       onReady={handlePlayerReady}
-
+      width={handleWidth(type)}
+      height={handlHeight(type)}
       config={{
         vimeo: {
           playerOptions: {

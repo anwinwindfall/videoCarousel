@@ -16,7 +16,7 @@ function App({ moduleData }) {
   const responsive = {
     0: { items: 1 },
     420: { items: 1 },
-    576: { items: 1.4 },
+    576: { items: 1 },
     768: { items: 1.4 },
     848: { items: 2.1 },  
     925: { items: 2.1 },
