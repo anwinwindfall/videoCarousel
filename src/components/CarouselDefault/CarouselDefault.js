@@ -25,7 +25,6 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
     return true
   }
 
-  console.log(numberOfSlidesNormal, numberOfSlidesStory);
   // console.log(videos.length, "length");
   const slidePrev=()=>{
     if (carouselRef.current) {
