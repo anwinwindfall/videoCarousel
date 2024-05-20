@@ -9,7 +9,10 @@
         text-align: left;
         color: #3F3837;
         text-transform: uppercase;
-        margin-bottom: 14px;
+
+        @media only screen and (max-width: 768px) {
+            margin-left: 17px;
+          }
     }
     .arrow-r{
         & img{
@@ -26,7 +29,7 @@
     .arrow-l{
         & img{
             position: absolute;
-            left: 2%;
+            left: 1%;
             top: 50%;
             // transform: translateY(-50%);
             border-radius: 50%;
