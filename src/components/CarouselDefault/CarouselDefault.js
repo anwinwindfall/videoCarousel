@@ -55,18 +55,18 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
       {currentIndex>=1&&(<div className='arrow-l' onClick={slidePrev}>
         <img src={leftangle} />
       </div>)}
-      <div className={`${type=="story"?'carousel-wrapper-story':'carousel-wrapper'}`}>
+      <div className={`${type=="story"?'carousel-wrapper-story':'carousel-wrapper'}`} >
       <AliceCarousel
         items={items}
         responsive={responsive}
         disableDotsControls={true}
         disableButtonsControls={true}
-        mouseTracking
+        mouseTracking={true}
         onSlideChanged={handleSlideChange}
-        activeIndex={currentIndex}
         ref={carouselRef}
         autoHeight={heightControl()}
         autoWidth={true}
+        touchTracking
       />
       </div>
       {hideRightArrow()&&(<div className='arrow-r' onClick={slideNext}>

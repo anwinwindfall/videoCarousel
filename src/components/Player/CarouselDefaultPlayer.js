@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player/vimeo'
 import './CarouselDefaultPlayer.scss'
 import Shimmer from '../Shimmer';
+import VimeoPlayer from 'react-player/vimeo';
 
 
 const CarouselDefaultPlayer = ({ type, url}) => {
@@ -25,7 +26,6 @@ const CarouselDefaultPlayer = ({ type, url}) => {
       return '410px'
     }
   }
-  
   return (
     <div className={`${type == "default" ? 'Video-player-class-wrap' : 'Video-player-class-story-wrap'}`}>
       {!isLoaded&&<Shimmer type={type}/>}
@@ -47,7 +47,7 @@ const CarouselDefaultPlayer = ({ type, url}) => {
             progress_bar: false,
             quality_selector: false,
             quality: '720p',
-            share: false
+            share: false,
           }
         }
       }}

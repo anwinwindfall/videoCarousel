@@ -29,7 +29,6 @@ function App({ moduleData }) {
   //   600: { items: 2 }, // show 2 items on medium screens
   //   1024: { items: 3 } // show 3 items on larger screens
   // };
-  console.log(moduleData.video_type);
   return (
     <CarouselDefault type={moduleData.video_type} videos={moduleData.video_settings} responsive={responsive} heading={moduleData.carousel_heading}/>
   );
