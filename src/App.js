@@ -23,7 +23,7 @@ function App({ moduleData }) {
     1200: { items: 3 },
     1700: { items: 3.8 },
     2000: { items: 4 },
-  };
+  }
   // const responsive = {
   //   0: { items: 1 }, // show 1 item on smaller screens
   //   600: { items: 2 }, // show 2 items on medium screens

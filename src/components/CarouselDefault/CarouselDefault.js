@@ -69,7 +69,7 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
         touchTracking
       />
       </div>
-      {hideRightArrow&&(<div className='arrow-r' onClick={slideNext}>
+      {hideRightArrow()&&(<div className='arrow-r' onClick={slideNext}>
         <img src={rightangle}/>
       </div>)}
       {/* {console.log(currentIndex, "currentIndex")} */}
