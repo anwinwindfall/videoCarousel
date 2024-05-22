@@ -2,11 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import ReactPlayer from 'react-player/vimeo'
 import './CarouselDefaultPlayer.scss'
 import Shimmer from '../Shimmer';
-import VimeoPlayer from 'react-player/vimeo';
+// import Player from '@vimeo/player';
+
 
 
 const CarouselDefaultPlayer = ({ type, url}) => {
   const [isLoaded, setIsLoaded] = useState(false);
+
+
   function handlePlayerReady(){
     setIsLoaded(true)
   }
@@ -30,12 +33,13 @@ const CarouselDefaultPlayer = ({ type, url}) => {
     <div className={`${type == "default" ? 'Video-player-class-wrap' : 'Video-player-class-story-wrap'}`}>
       {!isLoaded&&<Shimmer type={type}/>}
       <ReactPlayer
-      url={url}
+      url={`${url}&playsinline=0`}
       controls={true}
       className={`${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}
       onReady={handlePlayerReady}
       width={handleWidth(type)}
       height={handlHeight(type)}
+      // ref={playerRef}
       config={{
         vimeo: {
           playerOptions: {
