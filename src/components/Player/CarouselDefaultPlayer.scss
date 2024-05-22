@@ -37,8 +37,8 @@
             z-index: 999;
             cursor: pointer;
             @media only screen and (min-width: 768px) {
-                right: 1%;
-                top: 50%;
+                right: 1% !important;
+                top: 50% !important;
             }
         }
     }
@@ -64,8 +64,8 @@
             z-index: 999;
             cursor: pointer;
             @media only screen and (min-width: 768px) {
-                left: 2%;
-                top: 40%;
+                left: 1% !important;
+                top: 50% !important;
             }
         }
     }
