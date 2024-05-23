@@ -33,6 +33,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
       document.removeEventListener('msfullscreenchange', handleFullScreenChange);
     };
   }, []);
+  
   const handlePlayPause = () => {
     const video = videoRef.current;
     if (video.paused) {
