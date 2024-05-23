@@ -12,7 +12,27 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
   const [volume, setVolume] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  useEffect(() => {
+    const handleFullScreenChange = () => {
+      const video = videoRef.current;
+      if (!document.fullscreenElement) {
+        video.pause();
+        setIsPlaying(false);
+      }
+    };
 
+    document.addEventListener('fullscreenchange', handleFullScreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullScreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullScreenChange);
+    document.addEventListener('msfullscreenchange', handleFullScreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullScreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullScreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullScreenChange);
+      document.removeEventListener('msfullscreenchange', handleFullScreenChange);
+    };
+  }, []);
   const handlePlayPause = () => {
     const video = videoRef.current;
     if (video.paused) {
