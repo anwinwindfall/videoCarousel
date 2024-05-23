@@ -82,6 +82,9 @@
         width: 300px;
         height: 205px;
     }
+    &::after{
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 3px 0px;
+    }
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Story Player
 .Video-player-class-story {
@@ -126,7 +129,6 @@
     }
     img{
         max-width: 50px;
-        
     }
 }
 

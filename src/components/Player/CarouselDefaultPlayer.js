@@ -4,7 +4,7 @@ import './CarouselDefaultPlayer.scss'
 import Shimmer from '../Shimmer';
 
 
-const CarouselDefaultPlayer = ({ type, url, poster}) => {
+const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);

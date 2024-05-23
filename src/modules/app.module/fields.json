@@ -39,6 +39,13 @@
   {
    "children": [
     {
+     "type": "text",
+     "id": "ccda39a1-2387-13ba-2dad-74af193858d3",
+     "validation_regex": "",
+     "label": "Video Title",
+     "name": "video_title"
+    },
+    {
      "allow_new_line": false,
      "display_width": null,
      "id": "afb79c29-4bf2-c8b5-0af0-ffcf445e09bd",
