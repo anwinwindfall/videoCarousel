@@ -106,7 +106,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
   </div>
   {type=='default'&&<div className='title'>
       <p>{`${duration} mins watch`}</p>
-      <h1>Heading</h1>
+      <h1>{title&&title}</h1>
   </div>}
       
         </div>
