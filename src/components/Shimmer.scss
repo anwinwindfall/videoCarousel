@@ -1,10 +1,14 @@
 .card-story{
 width: 241px;
 padding-right: 10px;
+
 }
 .card {
     width: 375px;
     padding-right: 10px;
+    @media only screen and (max-width: 576px) {
+      width: 300px !important;
+    }
   }
   @keyframes placeholderShimmer {
     0% {
@@ -39,6 +43,9 @@ padding-right: 10px;
         background-size: 800px 205px;
         border-radius: 5px;
         margin-bottom: 12px;
+        @media only screen and (max-width: 576px) {
+          height: 180px !important;
+        }
       }
   .loader-shimmer-banner-story{
         height: 410px;

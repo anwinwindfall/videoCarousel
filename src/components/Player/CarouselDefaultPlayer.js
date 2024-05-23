@@ -124,8 +124,8 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
           {isPlaying ? <img src='https://upload.wikimedia.org/wikipedia/commons/d/dc/Pause_Button_icon_Apple.svg'/> : <img src='https://143223961.fs1.hubspotusercontent-eu1.net/hubfs/143223961/raw_assets/public/Assets/Eucharistic%20Revival/play.svg'/>}
         </button>}
   </div>
-  {type=='default'&&<div className='title'>
-      <p>{`${duration} mins watch`}</p>
+  {isLoaded&&type=='default'&&<div className='title'>
+     <p>{`${duration} mins watch`}</p>
       <h1>{title&&title}</h1>
   </div>}
       
