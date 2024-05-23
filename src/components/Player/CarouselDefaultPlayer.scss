@@ -16,6 +16,36 @@
         }
     }
 
+    & .title {
+        position: absolute !important;
+        bottom: 0;
+        color: red !important;
+        left: 0;
+        z-index: 999;
+
+        & p {
+            color: #ffffff;
+            margin-left: 20px !important;
+            font-family: Inria Sans;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.79px;
+            text-align: left;
+            text-transform: lowercase;
+        }
+
+        & h1 {
+            color: #ffffff;
+            margin-left: 20px !important;
+            margin-bottom: 23px;
+            font-family: Inria Sans;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21.58px;
+            text-align: left;
+        }
+    }
+
     .arrow-r {
         @media only screen and (max-width: 768px) {
             position: absolute;
@@ -36,6 +66,7 @@
             border-radius: 50%;
             z-index: 999;
             cursor: pointer;
+
             @media only screen and (min-width: 768px) {
                 right: 1% !important;
                 top: 50% !important;
@@ -63,6 +94,7 @@
             background-color: #ffffff !important;
             z-index: 999;
             cursor: pointer;
+
             @media only screen and (min-width: 768px) {
                 left: 1% !important;
                 top: 50% !important;
@@ -70,19 +102,30 @@
         }
     }
 }
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>.Normal PLayer
 .Video-player-class {
     width: 375px;
     height: 205px;
     object-fit: fill;
-
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
+
     @media only screen and (max-width: 576px) {
         width: 300px;
+        height: 180px;
+    }
+    &:before{
+        position: absolute;
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+        width: 375px;
         height: 205px;
     }
+    
 }
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Story Player
 .Video-player-class-story {
     width: 241px !important;
@@ -91,6 +134,7 @@
     border-radius: 4px;
     overflow: hidden;
 }
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Normal player wrapper
 .Video-player-class-wrap {
     position: relative;
@@ -99,19 +143,20 @@
     padding-right: 5.3px;
     @media only screen and (max-width: 576px) {
         width: 300px !important;
-        height: 205px !important;
+        height: 180px !important;
         padding-right: 5.3px;
     }
 }
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-.Video-player-class-story-wrap{
+.Video-player-class-story-wrap {
     position: relative;
     width: 241px !important;
     max-height: 410px !important;
     padding-right: 5.3px;
 }
 
-.Video-player-class-wrap .controls .btn-play{
+.Video-player-class-wrap .controls .btn-play {
     position: absolute;
     top: 77.5px;
     left: 162.5px;
@@ -119,26 +164,27 @@
     object-fit: fill;
     max-width: 50px;
     max-height: 50px;
-    
+
     @media only screen and (max-width: 576px) {
         top: 77.5px;
         left: 125px;
     }
-    img{
+
+    img {
         max-width: 50px;
-        
+
     }
 }
 
-.Video-player-class-story-wrap .controls .btn-play{
+.Video-player-class-story-wrap .controls .btn-play {
     position: absolute;
     top: 180px;
     left: 95.5px;
     object-fit: fill;
     max-width: 50px;
     max-height: 50px;
-    
-    img{
+
+    img {
         object-fit: fill;
         max-width: 50px;
     }
