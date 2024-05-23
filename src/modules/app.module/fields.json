@@ -24,12 +24,17 @@
    "type": "choice"
   },
   {
-   "type": "text",
+   "allow_new_line": false,
+   "default": "Top Videos",
+   "display_width": null,
    "id": "db3ca2f5-9e63-66a9-7077-8cae2a434d72",
-   "validation_regex": "",
    "label": "Carousel Heading",
+   "locked": false,
    "name": "carousel_heading",
-   "default": "Top Videos"
+   "required": false,
+   "show_emoji_picker": false,
+   "type": "text",
+   "validation_regex": ""
   },
   {
    "children": [
@@ -44,6 +49,21 @@
      "show_emoji_picker": false,
      "type": "text",
      "validation_regex": ""
+    },
+    {
+     "type": "image",
+     "id": "aa381f11-5f85-eb22-dac0-c42a3a17c74d",
+     "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": null,
+      "loading": "lazy"
+     },
+     "resizable": true,
+     "responsive": true,
+     "show_loading": false,
+     "label": "Thumbnail",
+     "name": "thumbnail"
     }
    ],
    "default": [],

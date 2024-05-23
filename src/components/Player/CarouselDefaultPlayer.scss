@@ -70,29 +70,76 @@
         }
     }
 }
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>.Normal PLayer
 .Video-player-class {
-    max-width: 375px;
-    max-height: 205px;
+    width: 375px;
+    height: 205px;
+    object-fit: fill;
 
+    border-radius: 4px;
+    overflow: hidden;
     @media only screen and (max-width: 576px) {
-        max-width: 300px;
-        max-height: 205px;
-        padding-left: 4px;
+        width: 300px;
+        height: 205px;
+    }
+}
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Story Player
+.Video-player-class-story {
+    width: 241px !important;
+    height: 410px !important;
+    object-fit: fill;
+    border-radius: 4px;
+    overflow: hidden;
+}
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Normal player wrapper
+.Video-player-class-wrap {
+    position: relative;
+    width: 375px !important;
+    max-height: 205px !important;
+    padding-right: 5.3px;
+    @media only screen and (max-width: 576px) {
+        width: 300px !important;
+        height: 205px !important;
+        padding-right: 5.3px;
+    }
+}
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.Video-player-class-story-wrap{
+    position: relative;
+    width: 241px !important;
+    max-height: 410px !important;
+    padding-right: 5.3px;
+}
+
+.Video-player-class-wrap .controls .btn-play{
+    position: absolute;
+    top: 77.5px;
+    left: 162.5px;
+    color: white;
+    object-fit: fill;
+    max-width: 50px;
+    max-height: 50px;
+    
+    @media only screen and (max-width: 576px) {
+        top: 77.5px;
+        left: 125px;
+    }
+    img{
+        max-width: 50px;
+        
     }
 }
 
-.Video-player-class-story {
-    max-width: 241px !important;
-    height: 410px !important;
-}
-
-.Video-player-class-wrap {
-    width: 375px !important;
-    max-height: 205px !important;
-
-    @media only screen and (max-width: 576px) {
-        max-width: 300px !important;
-        max-height: 205px !important;
+.Video-player-class-story-wrap .controls .btn-play{
+    position: absolute;
+    top: 180px;
+    left: 95.5px;
+    object-fit: fill;
+    max-width: 50px;
+    max-height: 50px;
+    
+    img{
+        object-fit: fill;
+        max-width: 50px;
     }
 }

@@ -11,7 +11,7 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
   const carouselRef= useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoIdRegex = /\/video\/(\d+)\?/;
-  const items = videos.map((items) => <CarouselDefaultPlayer url={items.video_url} type={type}/>)
+  const items = videos.map((items) => <CarouselDefaultPlayer key={items?.video_url} url={items?.video_url} type={type} poster={items?.thumbnail}/>)
   const screenWidth=window.innerWidth;
   const numberOfSlidesNormal= Math.ceil(screenWidth/375);
   const numberOfSlidesStory= Math.floor(screenWidth/241);
@@ -67,6 +67,7 @@ const CarouselDefault = ({videos, type, responsive, heading}) => {
         autoHeight={heightControl()}
         autoWidth={true}
         touchTracking
+        keyboardNavigation={false}
       />
       </div>
       {hideRightArrow()&&(<div className='arrow-r' onClick={slideNext}>
