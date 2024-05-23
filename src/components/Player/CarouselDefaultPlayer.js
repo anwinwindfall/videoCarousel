@@ -33,7 +33,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
       document.removeEventListener('msfullscreenchange', handleFullScreenChange);
     };
   }, []);
-  
+
   const handlePlayPause = () => {
     const video = videoRef.current;
     if (video.paused) {
@@ -116,6 +116,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
     width={handleWidth(type)}
     height={handlHeight(type)}
     poster={poster?.src}
+    disableRemotePlayback
     disablepictureinpicture controlslist="nodownload noplaybackrate"
     className={`${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}>
   <source src={url}/>

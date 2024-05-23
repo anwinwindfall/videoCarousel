@@ -190,3 +190,6 @@
         max-width: 50px;
     }
 }
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
