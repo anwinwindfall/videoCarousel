@@ -37,9 +37,13 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
   const handlePlayPause = () => {
     const video = videoRef.current;
     if (video.paused) {
+      if (!document.fullscreenElement) {
+        handleFullScreen();
+      }
       video.play();
       setIsPlaying(true);
-      handleFullScreen();
+      
+      
     } else {
       video.pause();
       setIsPlaying(false);
@@ -73,6 +77,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
   const handleLoadedMetadata = () => {
     const video = videoRef.current;
     setDuration(Math.ceil(video.duration/60));
+    setIsLoaded(true)
   };
 
   const handleFullScreen = () => {
@@ -87,7 +92,7 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
       video.msRequestFullscreen();
     }
   };
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   function handlePlayerReady(){
     setIsLoaded(true)
   }
@@ -116,10 +121,13 @@ const CarouselDefaultPlayer = ({ type, url, poster, title}) => {
     width={handleWidth(type)}
     height={handlHeight(type)}
     poster={poster?.src}
-    disableRemotePlayback
+    disableRemotePlayback 
+    controls={false}
+    muted={isMuted}
     disablepictureinpicture controlslist="nodownload noplaybackrate"
+    src={url}
+    preload='auto'
     className={`${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}>
-  <source src={url}/>
   </video>
   <div className='controls'>
   {isLoaded&&<button onClick={handlePlayPause} className='btn-play'>
