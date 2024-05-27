@@ -132,7 +132,7 @@
     object-fit: fill;
     border-radius: 4px;
     overflow: hidden;
-    object-fit: contain;
+    object-fit: fit;
 
 }
 
@@ -142,6 +142,8 @@
     width: 375px !important;
     max-height: 205px !important;
     padding-right: 5.3px;
+    border-radius: 4px;
+    overflow: hidden;
     @media only screen and (max-width: 576px) {
         width: 300px !important;
         height: 180px !important;
@@ -155,6 +157,8 @@
     width: 241px !important;
     max-height: 410px !important;
     padding-right: 5.3px;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .Video-player-class-wrap .controls .btn-play {
