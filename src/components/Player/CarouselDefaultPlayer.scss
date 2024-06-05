@@ -133,7 +133,6 @@
     border-radius: 4px;
     overflow: hidden;
     object-fit: contain;
-
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Normal player wrapper
@@ -144,6 +143,7 @@
     padding-right: 5.3px;
     border-radius: 4px;
     overflow: hidden;
+    
     @media only screen and (max-width: 576px) {
         width: 300px !important;
         height: 180px !important;
@@ -159,9 +159,10 @@
     padding-right: 5.3px;
     border-radius: 4px;
     overflow: hidden;
+    
 }
 
-.Video-player-class-wrap .controls .btn-play {
+.Video-player-class-wrap .player_controls .btn-play {
     position: absolute;
     top: 77.5px;
     left: 162.5px;
@@ -169,7 +170,6 @@
     object-fit: fill;
     max-width: 50px;
     max-height: 50px;
-
     @media only screen and (max-width: 576px) {
         top: 65px;
         left: 125px;
@@ -177,23 +177,81 @@
 
     img {
         max-width: 50px;
-        
+    }
+
+}
+.Video-player-class-wrap .player_controls .btn-fullscreen{
+    position:absolute;
+    top: 160.5px;
+    right: 25.5px;
+    max-width: 15px;
+    cursor: pointer;
+    @media only screen and (max-width: 576px) {
+        top: 135.5px;
     }
 }
 
-.Video-player-class-story-wrap .controls .btn-play {
+.Video-player-class-story-wrap .player_controls .btn-play {
     position: absolute;
     top: 180px;
     left: 95.5px;
     object-fit: fill;
     max-width: 50px;
     max-height: 50px;
-
+    background-color: transparent;
+    cursor: pointer;
     img {
         object-fit: fill;
         max-width: 50px;
     }
 }
+.Video-player-class-story-wrap .player_controls .btn-fullscreen{
+    position:absolute;
+    top: 370.5px;
+    right: 25.5px;
+    max-width: 15px;
+    cursor: pointer;
+}
 video::-internal-media-controls-overlay-cast-button {
     display: none;
+}
+
+.Video-player-class-wrap .video_loader{
+    display: inline-block;
+    z-index: 2147483647;
+    position: absolute;
+    top: 85px;
+    left: 162.5px;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #B14A49; /* Blue */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+    @media only screen and (max-width: 576px) {
+        top: 72.5px;
+        left: 125px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
+.Video-player-class-story-wrap .video_loader{
+    position: absolute;
+    display: inline-block;
+    top: 187.5px;
+    left: 95.5px;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #B14A49; /* Blue */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 }
