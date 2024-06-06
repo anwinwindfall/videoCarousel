@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import CarouselDefault from './components/CarouselDefault/CarouselDefault';
 import Shimmer from './components/Shimmer';
+import Modal from "./components/Modal";
 
 function App({ moduleData }) {
   // eslint-disable-next-line no-console
@@ -31,6 +32,7 @@ function App({ moduleData }) {
   // };
   return (
     <CarouselDefault type={moduleData.video_type} videos={moduleData.video_settings} responsive={responsive} heading={moduleData.carousel_heading}/>
+    // <Modal/>
   );
 }
 

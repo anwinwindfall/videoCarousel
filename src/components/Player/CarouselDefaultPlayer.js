@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './CarouselDefaultPlayer.scss'
 import Shimmer from '../Shimmer';
-import ReactPlayer from 'react-player'
-
+import CardDefault from '../CardDefault'
 
 const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -187,7 +186,8 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
       )}
 
       <div>
-        <ReactPlayer url='https://player.vimeo.com/external/904013451.m3u8?s=3f561ddf12e26e8edce063031260fc822301b396&oauth2_token_id=1768086672'  ref={videoRef} light={<img src={poster}></img>}/>
+        <CardDefault/>
+        {/* <ReactPlayer url='https://player.vimeo.com/external/904013451.m3u8?s=3f561ddf12e26e8edce063031260fc822301b396&oauth2_token_id=1768086672'  ref={videoRef} light={<img src={poster}></img>}/> */}
         {/* <video ref={videoRef}
         id='video'
           onLoadedData={handlePlayerReady}

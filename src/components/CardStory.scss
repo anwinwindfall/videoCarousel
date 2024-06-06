@@ -1,0 +1,20 @@
+.cards-story{
+    width: 241px;
+    height: 410px;
+    padding-right: 5.3px;
+    position: relative;
+    &:after {
+        background-image: url(https://143223961.fs1.hubspotusercontent-eu1.net/hubfs/143223961/raw_assets/public/Assets/Eucharistic%20Revival/play.svg);
+        background-repeat: no-repeat;
+        content: "";
+        height: 54px;
+        left: calc(50% - 27px);
+        position: absolute;
+        top: calc(50% - 27px);
+        width: 54px;
+        z-index: 999;
+    }
+    img{
+        position: relative;
+    }
+}
