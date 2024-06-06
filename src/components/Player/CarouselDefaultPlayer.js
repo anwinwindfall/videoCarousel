@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import ReactPlayer from 'react-player/vimeo'
 import './CarouselDefaultPlayer.scss'
 import Shimmer from '../Shimmer';
+import ReactPlayer from 'react-player'
 
 
 const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
@@ -26,7 +26,8 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
     });
     const data = await response.json();
     // Assuming the .m3u8 URL is under 'files' in the API response
-    const m3u8File = data.files.find(file => file.rendition === '1080p');
+    const m3u8File = data.files.find(file => file.quality === 'hls');
+    console.log(m3u8File.link);
     return m3u8File ? m3u8File.link : null;
   };
   const fetchVideoUrl = async () => {
@@ -66,9 +67,18 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
   }, []);
 
   const handlePlay = async () => {
+    // if (hls.is()()&&videoRef.current) {
+    //   const video=videoRef.current;
+    //   var hls= new hls();
+    //   hls.loadSource(videoBlobUrl);
+    //   hls.attachMedia(video)
+    //   hls.on(hls.Events.MANIFEST_PARSED, function(){
+    //     video.play()
+    //   })
+    // }
     const video = videoRef.current;
     if (!document.fullscreenElement) {
-      handleFullScreen();
+      // handleFullScreen();
     }
     if (videoRef.current) {
       const videos = document.querySelectorAll('video');
@@ -86,7 +96,8 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
         setIsPlaying(true);
       
 
-    } else {
+    }
+    else {
       video.pause();
       setIsPlaying(false);
     }
@@ -176,7 +187,9 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
       )}
 
       <div>
-        <video ref={videoRef}
+        <ReactPlayer url='https://player.vimeo.com/external/904013451.m3u8?s=3f561ddf12e26e8edce063031260fc822301b396&oauth2_token_id=1768086672'  ref={videoRef} light={<img src={poster}></img>}/>
+        {/* <video ref={videoRef}
+        id='video'
           onLoadedData={handlePlayerReady}
           onLoadedMetadata={handleLoadedMetadata}
           onCanPlay={() => setMetaDataLoaded(true)}
@@ -187,9 +200,11 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
           controls={false}
           disablepictureinpicture controlslist="nodownload noplaybackrate"
           preload='auto'
+          data-setup='{}'
           src={videoBlobUrl}
-          className={`${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}>
-        </video>
+          className={`video-js ${type == "default" ? 'Video-player-class' : 'Video-player-class-story'}`}>
+             <source src={videoBlobUrl} /> 
+    </video> */}
       </div>
 
 
@@ -206,7 +221,6 @@ const CarouselDefaultPlayer = ({ type, url, poster, title }) => {
         {metaDataLoaded && <p>{`${duration} mins watch`}</p>}
         <h1>{title && title}</h1>
       </div>}
-
     </div>
 
   )
